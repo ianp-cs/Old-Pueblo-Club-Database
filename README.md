@@ -89,3 +89,13 @@ To remove a Member from a Lab, log into the program and select **option 2** at t
 ## Reporting Operations
 
 ### Pulling a Member's Report
+To pull a specific Member's report, log into the program and select **option 3** at the Main Menu. On the following screen, select **option 1** at the Pull Reports Menu. You will be prompted to enter a Member ID, which must match the ID of an existing Member or Observer in the records. If the Member exists, their report will show up in the console.
+
+### Pulling a Lab's Report
+To pull a specific Lab's report, log into the program and select **option 3** at the Main Menu. On the following screen, select **option 2** at the Pull Reports Menu. You will be prompted to enter a Lab ID, which must match the ID of an existing Lab in the records. If the Lab exists, its report will show up in the console.
+
+### Pulling All Member Reports
+To pull the reports of all Members in the records, log into the program and select **option 3** at the Main Menu. On the following screen, select **option 3** at the Pull Reports Menu. All Member reports will appear in the console.
+
+### Pulling All Lab Reports
+To pull the reports of all Labs in the records, log into the program and select **option 3** at the Main Menu. On the following screen, select **option 4** at the Pull Reports Menu. All Lab reports will appear in the console.
