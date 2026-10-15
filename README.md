@@ -108,7 +108,7 @@ To pull the reports of all Labs in the records, log into the program and select 
 
 This project was built as an **in-memory data management simulation** to demonstrate core object-oriented programming (OOP) principles, custom memory management, and data relationship handling entirely in standard C++. 
 
-As a localized proof-of-concept, it features several intentional architectural constraints. Below is a breakdown of its current limitations alongside a roadmap for future development:
+As a proof-of-concept, it features several architectural constraints. Below is a breakdown of its current limitations alongside a roadmap for future development:
 
 ### 1. Data Persistence & Storage
 *   **Current State:** Data is saved using an unencrypted, plaintext format (`.dat`). While satisfactory for simple data visualization and minimizing project compilation dependencies, it does not scale well to high-volume or concurrent operations.
@@ -124,3 +124,9 @@ As a localized proof-of-concept, it features several intentional architectural c
 ### 3. Concurrency & Networking
 *   **Current State:** The application operates strictly as a single-threaded, local console application. Simultaneous data access from multiple users is not supported.
 *   **Future Improvement:** Separate the project into a **Client-Server architecture**. The backend logic could be wrapped into a RESTful API server using a C++ web framework (such as Crow or Pistache), allowing multi-threaded network connections via TCP/IP sockets to support multiple club terminals concurrently.
+
+### 4. User Interface
+*   **Current State:** The application runs entirely from the CLI with no GUI option. This makes it difficult to operate for the average user.
+*   **Future Improvement**: Transition the application to a Graphical User Interface (GUI) to optimize workflow efficiency and data visualization. 
+    *   **Option A (Desktop-Native C++):** Integrate **Dear ImGui** or **Qt** to build a cross-platform desktop application. This would replace numeric terminal menus with interactive dashboards, visual tables for rosters, click-to-modify buttons, and form validation to prevent invalid text fields.
+    *   **Option B (Web Frontend):** A decoupled web frontend could be built using **React** or **Vue.js**. This allows club administrators to securely access the system from any modern web browser without needing local installation files.
