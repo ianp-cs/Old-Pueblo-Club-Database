@@ -99,3 +99,28 @@ To pull the reports of all Members in the records, log into the program and sele
 
 ### Pulling All Lab Reports
 To pull the reports of all Labs in the records, log into the program and select **option 3** at the Main Menu. On the following screen, select **option 4** at the Pull Reports Menu. All Lab reports will appear in the console.
+
+---
+
+---
+
+# Architectural Limitations & Future Roadmap
+
+This project was built as an **in-memory data management simulation** to demonstrate core object-oriented programming (OOP) principles, custom memory management, and data relationship handling entirely in standard C++. 
+
+As a localized proof-of-concept, it features several intentional architectural constraints. Below is a breakdown of its current limitations alongside a roadmap for future development:
+
+### 1. Data Persistence & Storage
+*   **Current State:** Data is saved using an unencrypted, plaintext format (`.dat`). While satisfactory for simple data visualization and minimizing project compilation dependencies, it does not scale well to high-volume or concurrent operations.
+*   **Future Improvement:** Replace the text-file parsing system with an embedded **SQLite database** using an ORM layer, or interface with a standard relational database engine (like **PostgreSQL**). This would introduce formal indexing, transaction safety, and structured query optimization.
+
+### 2. Security & Authentication
+*   **Current State:** The login mechanism reads credentials from a local configuration file in plain text, meaning there is no data encryption in transit or at rest. 
+*   **Future Improvement:** 
+    *   Implement **SHA-256 (or bcrypt) hashing with salt** for password storage so credentials are never saved in plain text.
+    *   Incorporate an encryption standard like **AES-256** via OpenSSL for any sensitive text files stored locally.
+    *   Introduce multi-tier Role-Based Access Control (RBAC) to differentiate between standard operators, observers, and root administrators.
+
+### 3. Concurrency & Networking
+*   **Current State:** The application operates strictly as a single-threaded, local console application. Simultaneous data access from multiple users is not supported.
+*   **Future Improvement:** Separate the project into a **Client-Server architecture**. The backend logic could be wrapped into a RESTful API server using a C++ web framework (such as Crow or Pistache), allowing multi-threaded network connections via TCP/IP sockets to support multiple club terminals concurrently.
